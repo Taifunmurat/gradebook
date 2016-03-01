@@ -2,9 +2,29 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Gradebook</title>
+    <!-- Angular Material/Materialize style sheet -->
+    <link rel="stylesheet" href="sources/css/css/materialize.min.css">
+    <script src="sources/css/js/materialize.min.js"></script>
+
+    <!--Load dependencies-->
+    <script src="sources/angular/angular.min.js"></script>
+    <script src="sources/angular/angular-ui-router.js"></script>
+
+    <!--Load modules and controllers-->
+    <script src="app-module.js"></script>
+
 </head>
 <body>
-    <ui-view></ui-view>
+<div ng-app="app">
+    <div>
+        <div ui-view="navigation"></div>
+    </div>
+    <div>
+        <div ui-view="content"></div>
+    </div>
+    <div>
+        <div ui-view="sidebar"></div>
+    </div>
+</div>
 </body>
 </html>
