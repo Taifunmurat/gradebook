@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <!-- Angular Material/Materialize style sheet -->
-    <link rel="stylesheet" href="sources/css/css/materialize.min.css">
-    <script src="sources/css/js/materialize.min.js"></script>
+
+    <!--Basis for app-->
+    <script src="sources/js/jquery-1.12.3.js"></script>
 
     <!--Dependencies for AngularJs-->
     <script src="sources/angular/angular.min.js"></script>
     <script src="sources/angular/angular-ui-router.js"></script>
 
-    <!--Basis for app-->
+    <!--dependencies of app-->
     <script src="app-module.js"></script>
-
-    <!--Routing in dependency of app-->
     <script src="routing/app-module-route.js"></script>
 
+    <!-- Angular Material/Materialize style sheet -->
+    <link rel="stylesheet" href="sources/css/css/materialize.css">
+    <script src="sources/css/js/materialize.min.js"></script>
+
 </head>
+<nav>
+    <div ui-view="navigation"></div>
+</nav>
 <body>
-<div ng-app="app">
-    <div>
-        <div ui-view="navigation"></div>
-    </div>
-    <div>
+    <div class="page-flexbox-wrapper">
         <div ui-view="content"></div>
     </div>
-    <div>
-        <div ui-view="sidebar"></div>
-    </div>
-</div>
 </body>
+<footer class="page-footer">
+    <div ui-view="footer"></div>
+</footer>
 </html>

@@ -5,6 +5,7 @@
         .config(function ($stateProvider, $urlRouterProvider) {
 
             var navigationResource = '../view/navigation/navigation.tpl.html';
+            var footerResource = '../view/footer/footer.tpl.html';
 
             $stateProvider
                 .state('login', {
@@ -16,6 +17,9 @@
                         },
                         'content': {
                             templateUrl: '../view/login/login.tpl.html'
+                        },
+                        'footer': {
+                            templateUrl: footerResource
                         }
                     }
                 })
@@ -27,7 +31,10 @@
                             templateUrl: navigationResource
                         },
                         'content': {
-                            templateUrl: '../view/members/members.tpl.html'
+                            templateUrl: '../view/overview/overview.tpl.html'
+                        },
+                        'footer': {
+                            templateUrl: footerResource
                         }
                     }
                 })
@@ -40,6 +47,24 @@
                         },
                         'content': {
                             templateUrl: '../view/profile/profile.tpl.html'
+                        },
+                        'footer': {
+                            templateUrl: footerResource
+                        }
+                    }
+                })
+                .state('terms-of-usage', {
+                    name: 'terms of usage',
+                    url: '/terms-of-usage',
+                    views: {
+                        'navigation': {
+                            templateUrl: navigationResource
+                        },
+                        'content': {
+                            templateUrl: '../view/legal/terms-of-usage.tpl.html'
+                        },
+                        'footer': {
+                            templateUrl: footerResource
                         }
                     }
                 })
@@ -52,6 +77,9 @@
                         },
                         'content': {
                             templateUrl: '../view/register/register.tpl.html'
+                        },
+                        'footer': {
+                            templateUrl: footerResource
                         }
                     }
                 });
