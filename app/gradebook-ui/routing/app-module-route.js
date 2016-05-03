@@ -46,12 +46,18 @@
                             templateUrl: navigationResource
                         },
                         'content': {
-                            templateUrl: '../view/profile/profile.tpl.html'
+                            templateUrl: '../view/profile/profile.tpl.html',
+                            controller: '../view/profile/profile-controller.js'
                         },
                         'footer': {
                             templateUrl: footerResource
                         }
                     }
+                })
+                .state('change-mail-modal', {
+                    parent: 'profile',
+                    url: '/change-mail',
+                    templateUrl: '../view/profile/change-mail-modal.html'
                 })
                 .state('terms-of-usage', {
                     name: 'terms of usage',
