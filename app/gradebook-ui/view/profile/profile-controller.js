@@ -1,9 +1,9 @@
 (function () {
-    'use strict';
     angular.module('app')
-        .controller('ProfileController', function () {
-            function changeMail() {
-                $('#change-mail-modal').openModal(); //todo fix modal 
-            }
+        .controller('ProfileController', function ($scope) {
+            this.changeMail = function () {
+                this.email = "test123@test.com"
+            };
+            this.email = "test@test.com";
         });
 })();

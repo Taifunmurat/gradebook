@@ -1,9 +1,9 @@
 <div ng-controller="ProfileController as profileCtrl">
     <div class="container">
-        <h1>Profil von {{controller.email}}</h1>
+        <h1>Profil von {{profileCtrl.email}}</h1>
         <p>Willkommen auf deinem Profli, hier kannst du Accountänderungen vornehmen.</p>
         <form>
-            <div class="col s12"><a ng-click="profileCtrl.changeMail()" class="waves-effect waves-light btn"><i
+            <div class="col s12"><a  ui-sref="profile.changeMail" class="waves-effect waves-light btn"><i
                     class="material-icons left">email</i>Mail ändern</a>
             </div>
             </br>
@@ -12,7 +12,7 @@
             </br>
             <div class="col s12"><a class="waves-effect waves-light btn"><i
                     class="material-icons left">power_settings_new</i>Konto löschen</a></div>
-            <button data-target="change-mail-modal" class="btn modal-trigger">Modal</button>
         </form>
     </div>
+    <div ui-view="modal" class="modal modal-fixed-footer"></div>
 </div>

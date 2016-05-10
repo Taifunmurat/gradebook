@@ -46,18 +46,37 @@
                             templateUrl: navigationResource
                         },
                         'content': {
-                            templateUrl: '../view/profile/profile.tpl.html',
-                            controller: '../view/profile/profile-controller.js'
+                            templateUrl: '../view/profile/profile.tpl.html'
                         },
                         'footer': {
                             templateUrl: footerResource
                         }
-                    }
+                    },
+                    onEnter: ["$state", function($state) {
+                        $(document).on("keyup", function(e) {
+                            if(e.keyCode == 27) {
+                                $(document).off("keyup");
+                                $state.go("profile");
+                            }
+                        });
+
+                        $(document).on("click", ".Modal-backdrop, .Modal-holder", function() {
+                            $state.go("profile");
+                        });
+
+                        $(document).on("click", ".Modal-box, .Modal-box *", function(e) {
+                            e.stopPropagation();
+                        });
+                    }]
                 })
-                .state('change-mail-modal', {
+                .state('profile.changeMail', {
                     parent: 'profile',
                     url: '/change-mail',
-                    templateUrl: '../view/profile/change-mail-modal.html'
+                    views: {
+                        'modal': {
+                            templateUrl: '../view/profile/change-mail-modal.html'
+                        }
+                    }
                 })
                 .state('terms-of-usage', {
                     name: 'terms of usage',
