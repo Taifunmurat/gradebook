@@ -5,7 +5,7 @@ USE dbGradebook;
 CREATE TABLE Person(
   ID_Person INT AUTO_INCREMENT PRIMARY KEY,
   E_Mail VARCHAR(255),
-  Password CHAR(32)
+  Passwort CHAR(32)
 );
 
 CREATE TABLE Semester(
