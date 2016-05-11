@@ -16,21 +16,24 @@
 
     <!--instantiate controllers-->
     <script src="view/profile/profile-controller.js"></script>
+    <script src="view/overview/overview-controller.js"></script>
 
     <!--angular Material/Materialize style sheet -->
     <link rel="stylesheet" href="sources/css/css/materialize.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="sources/css/css/icon.css">
     <script src="sources/css/js/materialize.min.js"></script>
 
 
 </head>
-<nav>
-    <div ui-view="navigation"></div>
-</nav>
+<div class="navbar-fixed">
+    <nav>
+        <div ui-view="navigation"></div>
+    </nav>
+</div>
 <body>
-    <div class="page-flexbox-wrapper">
-        <div ui-view="content"></div>
-    </div>
+<div class="page-flexbox-wrapper">
+    <div ui-view="content"></div>
+</div>
 </body>
 <footer class="page-footer">
     <div ui-view="footer"></div>
