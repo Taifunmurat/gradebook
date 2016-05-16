@@ -1,21 +1,21 @@
-<div class="container">
+<div class="container" ng-controller="LoginController as loginCtrl">
     <h1>Login</h1>
     <div class="row">
         <form class="col s12">
             <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">email</i>
-                    <input id="mail" type="email" class="validate">
+                    <input id="mail" type="email" class="validate" ng-model="loginCtrl.email">
                     <label for="mail">Email</label>
                 </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">vpn_key</i>
-                    <input id="password" type="password" class="validate">
+                    <input id="password" type="password" class="validate" ng-model="loginCtrl.password">
                     <label for="password">Passwort</label>
                 </div>
             </div>
             <p>Noch kein Login? Dann <a ui-sref="register">registriere dich</a>.</p>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Login
+            <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="loginCtrl.login()">Login
                 <i class="material-icons right">send</i>
             </button>
         </form>

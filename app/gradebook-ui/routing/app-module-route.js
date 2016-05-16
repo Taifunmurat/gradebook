@@ -107,7 +107,8 @@
                             templateUrl: footerResource
                         }
                     }
-                });
+                })
+            ;
             $urlRouterProvider.otherwise('login');
         })
 })();

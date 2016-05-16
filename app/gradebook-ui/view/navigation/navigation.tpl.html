@@ -1,22 +1,16 @@
-<script>
-    $('.button-collapse').sideNav({
-        closeOnClick: true
-    });
-</script>
-
-<div class="nav-wrapper">
+<div class="nav-wrapper" ng-controller="NavigationController as navigationCtrl">
     <a href="#" class="brand-logo">Logo</a>
     <ul class="right hide-on-med-and-down">
-        <li><a ui-sref="overview">Übersicht</a></li>
-        <li><a ui-sref="profile">Profil</a></li>
-        <li><a ui-sref="login">Login</a></li>
-        <li><a ui-sref="logout">Logout</a></li>
+        <li><a ui-sref="overview" ng-show="navigationCtrl.logged">Übersicht</a></li>
+        <li><a ui-sref="profile" ng-show="navigationCtrl.logged">Profil</a></li>
+        <li><a ui-sref="login" ng-show="!navigationCtrl.logged">Login</a></li>
+        <li><a ng-show="navigationCtrl.logged" ng-click="navigationCtrl.logout()">Logout</a></li>
     </ul>
     <ul id="slide-out" class="side-nav">
-        <li><a ui-sref="overview">Übersicht</a></li>
-        <li><a ui-sref="profile">Profil</a></li>
-        <li><a ui-sref="login">Login</a></li>
-        <li><a ui-sref="logout">Logout</a></li>
+        <li><a ui-sref="overview" ng-show="navigationCtrl.logged">Übersicht</a></li>
+        <li><a ui-sref="profile" ng-show="navigationCtrl.logged">Profil</a></li>
+        <li><a ui-sref="login" ng-show="!navigationCtrl.logged">Login</a></li>
+        <li><a ng-show="navigationCtrl.logged" ng-click="navigationCtrl.logout()">Logout</a></li>
     </ul>
     <a data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
 </div>
