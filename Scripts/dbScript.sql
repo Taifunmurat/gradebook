@@ -1,5 +1,11 @@
 CREATE DATABASE dbGradebook;
 
+
+
+ALTER DATABASE dbGradebook
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci;
+
 USE dbGradebook;
 
 CREATE TABLE Person(
@@ -44,6 +50,10 @@ CREATE TABLE SemesterModul(
   FOREIGN KEY (Semester_ID) REFERENCES Semester(ID_Semester) ON UPDATE CASCADE ON DELETE CASCADE ,
   FOREIGN KEY (Modul_ID) REFERENCES Modul(ID_Modul) ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+CREATE USER 'applicationUser'@'%' IDENTIFIED BY 'gibbiX12345';
+
+GRANT Select, Insert, Update, Delete ON *.* TO 'applicationUser'@'%';
 
 
 
