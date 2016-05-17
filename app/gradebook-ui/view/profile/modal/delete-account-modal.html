@@ -1,0 +1,10 @@
+<div id="deleteAccount" class="modal" ng-controller="ProfileController as profileCtrl">
+    <div class="modal-content">
+        <h4>Account löschen</h4>
+        <p>Möchtest du wirklich deinen Account löschen?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn waves-effect waves-light" ng-click="profileCtrl.deleteAccountDB()"><i class="material-icons">delete</i></button>
+        <button class="btn waves-effect waves-light" ng-click="$('#deleteAccount').closeModal();"><i class="material-icons">cancel</i></button>
+    </div>
+</div>

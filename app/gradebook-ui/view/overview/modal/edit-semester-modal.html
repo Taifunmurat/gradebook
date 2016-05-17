@@ -1,0 +1,30 @@
+<div id="editSemester" class="modal" ng-controller="OverviewController as overviewController">
+    <div class="modal-content">
+        <h4>Semesterübersicht</h4>
+        <p>Erfasste Semester</p>
+        <div class="col s12">
+            <table>
+                <tbody>
+                <tr><!--repeat-->
+                    <td>1. Semester</td>
+                    <td ng-click="overviewController.deleteSemester()"><i class="material-icons">delete</i></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">class</i>
+                            <input id="semester" type="text" class="validate"
+                                   ng-model="overviewController.editSemester.newSemester">
+                            <label for="semester">neues Semester</label>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="modal-action modal-close waves-effect waves-green btn-flat "><i
+                                class="material-icons">add</i></button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

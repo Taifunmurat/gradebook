@@ -8,6 +8,16 @@
                     $('#changeMail').openModal();
                 });
             };
+            this.changePassword = function () {
+                $state.go("profile.changePassword").then(function () {
+                    $('#changePassword').openModal();
+                });
+            };
+            this.deleteAccount = function () {
+                $state.go("profile.deleteAccount").then(function () {
+                    $('#deleteAccount').openModal();
+                });
+            };
             this.saveMail = function ($mail) {
                 
             }

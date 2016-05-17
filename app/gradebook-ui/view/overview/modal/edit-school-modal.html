@@ -1,0 +1,13 @@
+<div id="editSchool" class="modal" ng-controller="OverviewController as overviewController">
+    <div class="modal-content">
+        <h4>Schule ändern</h4>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">school</i>
+            <input id="school" type="text" class="validate" ng-model="overviewController.editSchool.school"><!--todo map value-->
+            <label for="school">Schule</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn waves-effect waves-light" ng-click="overviewController.editSchoolName()"><i class="material-icons">save</i> </button><!--todo map value create function-->
+    </div>
+</div>

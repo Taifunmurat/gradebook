@@ -4,16 +4,16 @@
         <p>Gib unten deine neue Mail ein und bestätige sie, so einfach geht das!</p>
         <div class="input-field col s12">
             <i class="material-icons prefix">email</i>
-            <input id="mail" type="email" class="validate"><!--todo map value-->
+            <input id="mail" type="email" class="validate" ng-model="profileCtrl.changeMail.mail">
             <label for="mail">Email</label>
         </div>
         <div class="input-field col s12">
             <i class="material-icons prefix">email</i>
-            <input id="remail" type="email" class="validate"><!--todo map value-->
+            <input id="remail" type="email" class="validate" ng-model="profileCtrl.changeMail.remail">
             <label for="mail">Email</label>
         </div>
     </div>
     <div class="modal-footer">
-        <a ng-click="profileCtrl.saveNewMail(mail, remail)" class="modal-action modal-close waves-effect waves-green btn-flat ">Ändern</a><!--todo map value create function-->
+        <button class="btn waves-effect waves-light" ng-click="profileCtrl.saveNewMail()"><i class="material-icons">save</i></button>
     </div>
 </div>

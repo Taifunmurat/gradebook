@@ -1,81 +1,53 @@
-<div class="container" ng-controller="OverviewController as overviewCtrl">
-    <h1>Übersicht</h1>
-    <div class="row">
-        <div class="col s10">
-            <ul class="tabs">
-                <li class="tab col s3"><a ng-click="overviewCtrl.getSemester();" >{{}}</a></li>
-            </ul>
+<div ng-controller="OverviewController as overviewCtrl">
+    <div class="container">
+        <h1>Übersicht</h1>
+        <div class="row">
+            <div class="col s10">
+                <ul class="tabs">
+                    <li class="tab col s3"><a ng-click="overviewCtrl.getSemester();"></a></li>
+                </ul>
+            </div>
+            <div class="col s2">
+                <button class="btn waves-effect waves-light" type="submit" name="action"
+                        ng-click="overviewCtrl.editSemester();">
+                    <i class="material-icons">content_paste</i>
+                </button>
+            </div>
         </div>
-        <div class="col s2">
-            <button class="btn waves-effect waves-light" type="submit" name="action" ng-click="overviewCtrl.editSemester();">
-                <i class="material-icons">content_paste</i>
-            </button>
-        </div>
+        <ul class="collapsible" data-collapsible="accordion">
+            <li>
+                <div class="collapsible-header">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th data-field="matter"><i class="material-icons">school</i>GIBB</th>
+                            <th data-field="matter" ng-click="overviewCtrl.editSchool();"><i
+                                    class="material-icons">edit</i></th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+                <div class="collapsible-body">
+                    <table class="responsive-table">
+                        <thead>
+                        <tr>
+                            <th data-field="matter">Fach</th>
+                            <th data-field="matter"><i class="material-icons" ng-click="overviewCtrl.addMatter()">add_circle_outline</i></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr> <!--repeat-->
+                            <td>Mathe</td>
+                            <td>5</td><!--repeat-->
+                            <td>&Oslash; 1</td>
+                            <td><i class="material-icons" ng-click="overviewCtrl.addMark()">add_circle_outline</i></td>
+                            <td><i class="material-icons" ng-click="overviewCtrl.editMatter()">edit</i></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+        </ul>
     </div>
-    <ul class="collapsible" data-collapsible="accordion">
-        <li>
-            <div class="collapsible-header">
-                <table>
-                    <thead>
-                    <tr>
-                        <th data-field="matter"><i class="material-icons">account_balance</i>SCOOL NAME</th>
-                        <th data-field="matter" ng-click="overviewCtrl.editSchoolName();"><i
-                                class="material-icons">edit</i></th>
-                    </tr>
-                    </thead>
-                </table>
-            </div>
-            <div class="collapsible-body">
-                <table class="responsive-table">
-                    <thead>
-                    <tr>
-                        <th data-field="matter">MATTER</th>
-                        <th data-field="matter"><i class="material-icons">add_circle_outline</i></th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>MATHEMATICS</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>1</td>
-                        <td>&Oslash; 1</td>
-                        <td><i class="material-icons" ng-click="overviewCtrl.editMatter()">edit</i></td>
-                    </tr>
-
-                    <tr>
-                        <td>GERMAN</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>4</td>
-                        <td>3</td>
-                        <td>&Oslash; 4.5</td>
-                        <td><i class="material-icons" ng-click="overviewCtrl.editMatter()">edit</i></td>
-                    </tr>
-
-                    <tr>
-                        <td>ENGLISH</td>
-                        <td>5</td>
-                        <td>1</td>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>&Oslash; 5</td>
-                        <td><i class="material-icons" ng-click="overviewCtrl.editMatter()">edit</i></td>
-                    </tr>
-
-                    <tr>
-                        <td>HISTORY</td>
-                        <td>1</td>
-
-                        <td>1</td>
-                        <td>&Oslash; 1</td>
-                        <td><i class="material-icons" ng-click="overviewCtrl.editMatter()">edit</i></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </li>
-    </ul>
-
+    <div ui-view="modal"></div>
 </div>

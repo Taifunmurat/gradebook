@@ -1,0 +1,14 @@
+<div id="addMark" class="modal" ng-controller="OverviewController as overviewController">
+    <div class="modal-content">
+        <h4>Note hinzufügen</h4>
+        <p>Note erfassen</p>
+        <div class="input-field col s4">
+            <i class="material-icons prefix">grade</i>
+            <input id="mark" type="number" class="validate" ng-model="overviewController.addMark.mark"><!--todo map value-->
+            <label for="mark">Note</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn waves-effect waves-light" ng-click="overviewController.saveMark()"><i class="material-icons">save</i></button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div id="editMatter" class="modal" ng-controller="OverviewController as overviewController">
+    <div class="modal-content">
+        <h4>Fach bearbeiten</h4>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">class</i>
+            <input id="matter" type="text" class="validate" ng-model="overviewController.editMatter.matter">
+            <label for="matter">Fach</label>
+        </div>
+        <button class="btn waves-effect waves-light"><i
+                class="material-icons" ng-click="overviewController.updateMatter()">save</i></button>
+        <p>Erfasste Noten</p>
+        <div class="col s12">
+            <table>
+                <tbody>
+                <tr><!--repeat-->
+                    <td>5</td>
+                    <td><button class="btn waves-effect waves-light" ng-click="overviewController.deleteMark()"><i class="material-icons">delete</i></button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

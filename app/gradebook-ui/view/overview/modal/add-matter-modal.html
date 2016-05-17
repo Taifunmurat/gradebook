@@ -1,0 +1,13 @@
+<div id="addMatter" class="modal" ng-controller="OverviewController as overviewController">
+    <div class="modal-content">
+        <h4>Neues Fach erfassen</h4>
+        <div class="input-field col s4">
+            <i class="material-icons prefix">class</i>
+            <input id="matter" type="text" class="validate" ng-model="overviewController.addMatter.newMatter">
+            <label for="matter">Fach</label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn waves-effect waves-light" ng-click="overviewController.saveNewMatter()"><i class="material-icons">save</i></button>
+    </div>
+</div>
